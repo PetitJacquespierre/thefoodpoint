@@ -10,10 +10,10 @@
     <link rel="icon" type="image/png" href="img/TFPblack.png">
     
     <!-- Meta Tags OpenGraph para WhatsApp y Redes Sociales -->
-    <meta property="og:title" content="¡Pide ahora en The Food Point!">
-    <meta property="og:description" content="Las mejores hamburguesas y perros calientes de la ciudad. Haz tu pedido rápido y fácil.">
-    <meta property="og:image" content="img/hero_with_logo.jpg"> <!-- Sube tu web para que funcione en WhatsApp, y coloca aquí la URL absoluta (ej: https://midominio.com/img/hero_with_logo.jpg) -->
-    <meta property="og:url" content="https://thefoodpoint.pf">
+    <meta property="og:title" content="The Food Point 🍔 | Las Mejores Hamburguesas">
+    <meta property="og:description" content="¿Antojo de una buena hamburguesa o un perro caliente? Entra a nuestra Carta Digital interactiva, haz tu pedido rápido y recíbelo en casa.">
+    <meta property="og:image" content="https://thefoodpointpf.vercel.app/img/hero_with_logo.jpg">
+    <meta property="og:url" content="https://thefoodpointpf.vercel.app/">
     <meta property="og:type" content="website">
     
     <!-- PWA -->
@@ -66,8 +66,13 @@
         <div class="logo-container">
             <img src="img/logo_the_food_point.png" alt="The Food Point" id="header-logo">
         </div>
-        <div class="bcv-badge">
-            <i class="fa-solid fa-money-bill-trend-up text-yellow"></i> BCV: <span id="bcv-value">764.35</span> Bs
+        <div class="header-actions" style="display:flex; gap: 10px; align-items:center;">
+            <button id="btn-install-pwa" class="pwa-install-btn" style="display: none;">
+                <i class="fa-solid fa-download"></i> INSTALAR APP
+            </button>
+            <div class="bcv-badge">
+                <i class="fa-solid fa-money-bill-trend-up text-yellow"></i> BCV: <span id="bcv-value">764.35</span> Bs
+            </div>
         </div>
     </header>
 

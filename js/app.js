@@ -686,7 +686,11 @@ function sendOrder() {
     text += `- Subtotal: $${subtotal.toFixed(2)}\r\n`;
     text += `- Delivery: $${deliveryCost.toFixed(2)}\r\n`;
     text += `*TOTAL A PAGAR: $${totalUsd.toFixed(2)} (${totalBs} Bs)*\r\n\r\n`;
-    text += `_Pedido realizado desde la web The Food Point_`;
+    
+    // Enlace dinámico para promocionar la web (se adapta a tu dominio actual)
+    const siteUrl = window.location.origin;
+    text += `🍔 _¿Antojo? Pide tú también rápido y fácil aquí:_ \r\n`;
+    text += `👉 ${siteUrl}`;
 
     // Codificamos la URL. encodeURIComponent convierte \r\n en %0D%0A (El salto de línea oficial para WhatsApp Mobile)
     const encodedText = encodeURIComponent(text);
@@ -694,3 +698,38 @@ function sendOrder() {
     
     window.open(whatsappUrl, '_blank');
 }
+
+// =========================================
+// PWA INSTALLATION LOGIC
+// =========================================
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    // Evita que Chrome muestre el mini-infobar por defecto
+    e.preventDefault();
+    // Guarda el evento para dispararlo luego
+    deferredPrompt = e;
+    
+    // Muestra el botón de instalación en la interfaz
+    const installBtn = document.getElementById('btn-install-pwa');
+    if (installBtn) {
+        installBtn.style.display = 'block';
+        installBtn.addEventListener('click', async () => {
+            // Muestra el prompt de instalación nativo
+            deferredPrompt.prompt();
+            // Espera la respuesta del usuario
+            const { outcome } = await deferredPrompt.userChoice;
+            console.log(`Respuesta del usuario a la instalación: ${outcome}`);
+            // Limpia la variable
+            deferredPrompt = null;
+            // Oculta el botón
+            installBtn.style.display = 'none';
+        });
+    }
+});
+
+window.addEventListener('appinstalled', (evt) => {
+    console.log('Aplicación PWA instalada correctamente');
+    const installBtn = document.getElementById('btn-install-pwa');
+    if (installBtn) installBtn.style.display = 'none';
+});
