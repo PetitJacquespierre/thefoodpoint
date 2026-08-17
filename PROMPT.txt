@@ -1,0 +1,18 @@
+¡Hola! Tengo un nuevo cliente y necesito iniciar su aplicación web a partir de mi plantilla maestra. 
+Por favor, actúa como mi Ingeniero Frontend experto y sigue estos pasos exactos sin alterar la estructura central:
+
+1. **Crear el Entorno:** Duplica la carpeta "PLANTILLA_BASE_NO_TOCAR" y nómbrala con el "Nombre de la Carpeta" indicado abajo.
+2. **Configurar el Backend (Google Sheets):** Abre `js/app.js` de la nueva carpeta y cambia la constante `CLIENT_ID` por el "ID del Cliente" indicado abajo. No rompas la URL de la API de Grow Studio.
+3. **Personalizar el Splash Screen:** Abre `index.html` y cambia la constante `BUSINESS_NAME` (línea ~34) por el "Nombre del Negocio" indicado abajo. Esto activará las frases persuasivas y dinámicas de carga.
+4. **Configurar WhatsApp:** Revisa el archivo HTML/JS para actualizar el número de WhatsApp del botón de pedidos o el enlace a las redes sociales del nuevo cliente (si aplica).
+5. **Estética y Colores (Opcional):** Si te paso una paleta de colores, ajusta las variables CSS en `style.css` (como `--primary`) para que hagan juego con la marca.
+6. Confírmame cuando esté listo para yo hacer las pruebas y subir los cambios a producción.
+
+==================================
+✏️ **DATOS DEL NUEVO PROYECTO:**
+==================================
+- Nombre de la Carpeta: [Ej: Perros Calientes Pedro]
+- Nombre del Negocio (Para el Splash Screen): [Ej: PEDRO PÉREZ]
+- ID del Cliente (Para la base de datos): [Ej: V12345678]
+- Color Principal de la Marca: [Ej: Rojo y Amarillo]
+- Número de WhatsApp: [Ej: +584120000000]
