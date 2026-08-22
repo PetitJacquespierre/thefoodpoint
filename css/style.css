@@ -542,8 +542,8 @@ main {
 
 .menu-grid {
     display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .product-card {
@@ -1365,4 +1365,26 @@ footer {
 }
 .animate-pop {
     animation: pop 0.3s ease-in-out;
+}
+
+/* GRID 2 COLUMNAS MOBILE -> MULTICOLUMNA DESKTOP */
+@media (min-width: 768px) {
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+}
+
+/* Ajustes perfectos de mÃ¡rgenes y tarjetas para 2 columnas en mÃ³vil */
+@media (max-width: 767px) {
+    main { padding: 10px; }
+    header { padding: 12px 15px; }
+    .hero-content { padding: 30px 15px; }
+    .product-content { padding: 0 8px; }
+    .product-info h3 { font-size: 0.95rem; margin-bottom: 5px; line-height: 1.2; }
+    .product-desc { font-size: 0.75rem; margin-bottom: 10px; -webkit-line-clamp: 3; }
+    .price-usd { font-size: 1.25rem; }
+    .add-btn { padding: 8px; font-size: 0.8rem; }
+    .product-card { padding: 0 0 12px 0; border-radius: 12px; }
+    .product-image-box { margin-bottom: 10px; }
 }
